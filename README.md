@@ -8,6 +8,18 @@ This project contains the scripts for our entry in the Mask and Breathing Sub-Ch
 ### The pipeline of proposed system in the Breathing Sub-Challenge
 ![2](https://user-images.githubusercontent.com/23567819/96177590-6148b800-0f2e-11eb-8736-5b34d6c43d2e.jpg)
 
+Project Organization
+------------
+    .
+    ├── LICENSE
+    ├── README.md                           <- README for developers using this project.
+    │
+    ├── Breathing                           <- Python project dedicated to breathing recognizing with the help of deep neural network (end-to-end) models. 
+    |                                          Please see Breathing/README.md for more details.
+    ├── Mask                                <- Python project dedicated to recognizing the mask on the face from recorded audio by different pretrained deep neural networks.
+                                               Please see Breathing/README.md for more details.
+   
+--------
 
 
 
