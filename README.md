@@ -3,7 +3,7 @@ ComParE 2020 Mask and Breathing Sub-Challenges
 
 ## Description
 This project contains the scripts for our entry in the Mask and Breathing Sub-Challenges, which are the part of the INTERSPEECH 2020 Computational Paralinguistics Challenge (ComParE 2020).
-![](pp_mask.pdf)
+![1](pp_mask.pdf)
 
 
 
@@ -12,7 +12,7 @@ This project contains the scripts for our entry in the Mask and Breathing Sub-Ch
 
 For more information, please, contact: \
 m.markitantov@yandex.ru - Mask Sub-Challenge\
-denis.dresvyanskiy@uni-ulm.de - Breathing Sub-challenge \
+denis.dresvyanskiy@uni-ulm.de - Breathing Sub-challenge 
 
 # Citing
 Please cite our paper if you use any code of our solution for ComParE2020 in your research work. \
