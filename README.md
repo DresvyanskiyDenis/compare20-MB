@@ -16,6 +16,7 @@ Project Organization
     │
     ├── Breathing                           <- Python project dedicated to breathing recognizing with the help of deep neural network (end-to-end) models. 
     |                                          Please see Breathing/README.md for more details.
+    |
     ├── Mask                                <- Python project dedicated to recognizing the mask on the face from recorded audio by different pretrained deep neural networks.
                                                Please see Breathing/README.md for more details.
    
