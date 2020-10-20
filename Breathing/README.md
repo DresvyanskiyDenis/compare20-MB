@@ -60,5 +60,6 @@ Note:
 * To run every script, you should configure the data paths in it.
 
 # Reproduction of Results
-You can find the weights for models via this [link](https://drive.google.com/drive/folders/11JZduaDgUttLHfH1b9tB2H4CycrH3qY8?usp=sharing).\\
+You can find the weights for models via this [link](https://drive.google.com/drive/folders/11JZduaDgUttLHfH1b9tB2H4CycrH3qY8?usp=sharing).
+
 To reproduce results, please, run corresponding python scripts in Submissions folder.
