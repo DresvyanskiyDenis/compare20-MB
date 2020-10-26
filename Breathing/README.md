@@ -1,5 +1,3 @@
-The description will be updated on 22.10.2020
-
 # Compare2020 Breathing SC
 
 ## Project organization
