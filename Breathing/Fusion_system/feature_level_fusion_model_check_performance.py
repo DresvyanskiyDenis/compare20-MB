@@ -2,7 +2,7 @@ from scipy.stats import pearsonr
 import os
 import pandas as pd
 
-from Compare2020.Fusion.fusion_utils import load_deep_features_1d_CNN, normalize_features, vector_normalization, \
+from Breathing.Fusion_system.fusion_utils import load_deep_features_1d_CNN, normalize_features, vector_normalization, \
     prepare_data, divide_data_on_parts, form_train_and_val_datasets, extract_and_reshape_list_of_parts, \
     reshaping_data_for_model, choose_real_labs_only_with_filenames, create_LSTM_model, correlation_coefficient_loss, \
     MyCustomCallback, concatenate_prediction

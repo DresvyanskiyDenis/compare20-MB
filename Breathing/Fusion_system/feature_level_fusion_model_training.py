@@ -5,41 +5,33 @@ from tensorflow.keras import backend as K
 import numpy as np
 
 
-from Compare2020.Fusion.fusion_utils import load_deep_features_1d_CNN, normalize_features, vector_normalization, \
+from Breathing.Fusion_system.fusion_utils import load_deep_features_1d_CNN, normalize_features, vector_normalization, \
     prepare_data, divide_data_on_parts, form_train_and_val_datasets, extract_and_reshape_list_of_parts, \
     reshaping_data_for_model, choose_real_labs_only_with_filenames, create_LSTM_model, correlation_coefficient_loss, \
     MyCustomCallback, concatenate_prediction
 
-if __name__ == "__main__":
-    window=1600
-    step=int(window*2/5.)
-    batch_size=15
-    num_parts=4
-    epochs=100
-    path_to_save_model='best_models/'
+def main(window_size=1600, batch_size=15, num_parts=4,epochs=100,
+         path_to_save_models='../../logs/LSTM_models/',
+         path_to_train_data='/content/drive/My Drive/Compare_2020/Breathing_1/Deep_features/',
+         path_to_train_labels = '/content/drive/My Drive/ComParE2020_Breathing/lab/',
+         path_to_devel_data = '/content/drive/My Drive/Compare_2020/Breathing_1/Deep_features/',
+         path_to_devel_labels = '/content/drive/My Drive/ComParE2020_Breathing/lab/',
+         path_to_train_data_2D_CNN='/content/drive/My Drive/Compare_2020/Breathing_1/Deep_features_Danila/',
+         path_to_devel_data_2D_CNN = '/content/drive/My Drive/Compare_2020/Breathing_1/Deep_features_Danila/',
+         deep_features_1D_prefix_train='deep_features_train_model_',
+         deep_features_1D_prefix_dev = 'deep_features_devel_model_',
+         deep_features_2D_prefix_train = 'deep_features_train_fold_',
+         deep_features_2D_prefix_dev = 'deep_features_dev_fold_'):
+
+    window=window_size
+    step=int(window_size*2/5.)
+    path_to_save_model=path_to_save_models
     if not os.path.exists(path_to_save_model):
       os.mkdir(path_to_save_model)
 
-    # 1D CNN deep features
-    # train data
-    path_to_train_data='/content/drive/My Drive/Compare_2020/Breathing_1/Deep_features/'
-    path_to_train_labels='/content/drive/My Drive/ComParE2020_Breathing/lab/'
-    # devel data
-    path_to_devel_data='/content/drive/My Drive/Compare_2020/Breathing_1/Deep_features/'
-    path_to_devel_labels='/content/drive/My Drive/ComParE2020_Breathing/lab/'
-
-    # 2D CNN deep features
-    # train data
-    path_to_train_data_2D_CNN = '/content/drive/My Drive/Compare_2020/Breathing_1/Deep_features_Danila/'
-    # devel data
-    path_to_devel_data_2D_CNN = '/content/drive/My Drive/Compare_2020/Breathing_1/Deep_features_Danila/'
     bests=[]
     for num_part in range(0,num_parts):
           best_result=0
-          deep_features_1D_prefix_train = 'deep_features_train_model_'
-          deep_features_1D_prefix_dev = 'deep_features_devel_model_'
-          deep_features_2D_prefix_train = 'deep_features_train_fold_'
-          deep_features_2D_prefix_dev = 'deep_features_dev_fold_'
           train_data, train_labels, train_dict=load_deep_features_1d_CNN(path_to_deep_features_1D_CNN=path_to_train_data+deep_features_1D_prefix_train+str(num_part)+'.csv',
                                                                       path_to_labels=path_to_train_labels,
                                                                       path_to_deep_features_train_2D_CNN=path_to_train_data_2D_CNN+deep_features_2D_prefix_train+str(num_part)+'.npy',
@@ -102,3 +94,6 @@ if __name__ == "__main__":
           K.clear_session()
 
     print('bests:', bests)
+
+if __name__ == "__main__":
+    main()
