@@ -8,7 +8,7 @@ from Breathing.Fusion_system.fusion_utils import load_deep_features_1d_CNN, norm
     MyCustomCallback, concatenate_prediction
 
 if __name__ == "__main__":
-
+    # to run script, please, specify all paths to data and prefixes
     window=1600
     step=int(window*2/5.)
     batch_size=15
@@ -18,7 +18,7 @@ if __name__ == "__main__":
     path_to_model_for_part_1='/content/drive/My Drive/Compare_2020/Breathing_1/end_to_end/best_models/best_model_weights_idx_of_part_1.h5'
     path_to_model_for_part_2='/content/drive/My Drive/Compare_2020/Breathing_1/end_to_end/best_models/best_model_weights_idx_of_part_2.h5'
     path_to_model_for_part_3='/content/drive/My Drive/Compare_2020/Breathing_1/end_to_end/best_models/best_model_weights_idx_of_part_3.h5'
-    paths_to_models=[path_to_model_for_part_0, path_to_model_for_part_1, path_to_model_for_part_2, path_to_model_for_part_3]
+
     # 1D CNN deep features
     # train data
     path_to_train_data='/content/drive/My Drive/Compare_2020/Breathing_1/Deep_features/'
@@ -32,20 +32,26 @@ if __name__ == "__main__":
 
     # 2D CNN deep features
     # train data
-    path_to_train_data_2D_CNN='/content/drive/My Drive/Compare_2020/Breathing_1/Deep_features_Danila/'
+    path_to_train_data_2D_CNN=''
     # devel data
-    path_to_devel_data_2D_CNN='/content/drive/My Drive/Compare_2020/Breathing_1/Deep_features_Danila/'
+    path_to_devel_data_2D_CNN=''
     # test data
-    path_to_test_data_2D_CNN='/content/drive/My Drive/Compare_2020/Breathing_1/Deep_features_Danila/'
+    path_to_test_data_2D_CNN=''
+
+    deep_features_1D_prefix_train = 'deep_features_train_model_'
+    deep_features_1D_prefix_dev = 'deep_features_devel_model_'
+    deep_features_1D_prefix_test = 'deep_features_test_model_'
+    deep_features_2D_prefix_train = 'deep_features_train_fold_'
+    deep_features_2D_prefix_dev = 'deep_features_dev_fold_'
+
+    paths_to_models=[path_to_model_for_part_0, path_to_model_for_part_1, path_to_model_for_part_2, path_to_model_for_part_3]
+
+
     bests=[]
     total_predicted_labels=pd.DataFrame(columns=['filename', 'timeFrame','upper_belt'])
     for num_part in range(num_parts):
         best_result=0
-        deep_features_1D_prefix_train = 'deep_features_train_model_'
-        deep_features_1D_prefix_dev = 'deep_features_devel_model_'
-        deep_features_1D_prefix_test='deep_features_test_model_'
-        deep_features_2D_prefix_train = 'deep_features_train_fold_'
-        deep_features_2D_prefix_dev = 'deep_features_dev_fold_'
+
 
 
         train_data, train_labels, train_dict=load_deep_features_1d_CNN(path_to_deep_features_1D_CNN=path_to_train_data+deep_features_1D_prefix_train+str(num_part)+'.csv',
