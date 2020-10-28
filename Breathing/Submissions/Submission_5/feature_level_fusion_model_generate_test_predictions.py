@@ -43,6 +43,7 @@ if __name__ == "__main__":
     deep_features_1D_prefix_test = 'deep_features_test_model_'
     deep_features_2D_prefix_train = 'deep_features_train_fold_'
     deep_features_2D_prefix_dev = 'deep_features_dev_fold_'
+    deep_features_2D_prefix_test = 'deep_features_test_fold_'
 
     paths_to_models=[path_to_model_for_part_0, path_to_model_for_part_1, path_to_model_for_part_2, path_to_model_for_part_3]
 
@@ -68,7 +69,7 @@ if __name__ == "__main__":
                                                                   exceptions_filenames=['devel_00.wav'])
         test_data, test_labels, test_dict=load_deep_features_1d_CNN(path_to_deep_features_1D_CNN=path_to_test_data+deep_features_1D_prefix_test+str(num_part)+'.csv',
                                                                   path_to_labels=path_to_test_labels,
-                                                                  path_to_deep_features_train_2D_CNN=path_to_test_data_2D_CNN+'fold_'+str(num_part)+'_features_test.npy',
+                                                                  path_to_deep_features_train_2D_CNN=path_to_test_data_2D_CNN+deep_features_2D_prefix_test+str(num_part)+'.npy',
                                                                   path_to_deep_features_dev_2D_CNN='',
                                                                   prefix='test',
                                                                   exceptions_filenames=['devel_00.wav'])
