@@ -61,3 +61,7 @@ Note:
 You can find the weights for models via this [link](https://drive.google.com/drive/folders/11JZduaDgUttLHfH1b9tB2H4CycrH3qY8?usp=sharing).
 
 To reproduce results, please, run corresponding python scripts in Submissions folder.
+
+# Citing
+Please cite our paper if you use any code of our solution for ComParE2020 in your research work. \
+```M. Markitantov, D. Dresvyanskiy, D. Mamontov, H. Kaya, W. Minker, and A. Karpov, “Ensembling end-to-end deep modelsfor computational paralinguistics tasks: ComParE 2020 Mask andBreathing Sub-challenges,” in INTERSPEECH, Shanghai, China, October 2020, to appear.```
